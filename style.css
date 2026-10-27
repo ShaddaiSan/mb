@@ -655,3 +655,23 @@ textarea { resize: vertical; min-height: 100px; }
 }
 .photo-grid { margin-top: 8px; }
 .gallery-photo.is-sign img { object-position: center 12%; }
+
+/* Visor con información del platillo */
+.menu-item .photo, .menu-banner { cursor: zoom-in; }
+.menu-item .photo:focus-visible, .menu-banner:focus-visible { outline: 3px solid var(--magenta); outline-offset: 2px; }
+.lightbox-info { display: none; }
+.lightbox.has-info .lightbox-info {
+  display: block;
+  margin-top: 10px;
+  padding: 16px 20px 18px;
+  border-radius: var(--radius);
+  background: var(--bg-dark);
+  color: var(--text-light);
+  border: 1px solid var(--line-light);
+  max-width: min(94vw, 760px);
+}
+.lightbox-title { margin: 0 0 0.2em; font-size: 1.35rem; }
+.lightbox-desc { margin: 0; color: var(--text-muted-light); }
+.lightbox-desc:empty, .lightbox-price:empty { display: none; }
+.lightbox-price { display: inline-block; margin-top: 0.6em; font-family: var(--font-display); font-weight: 600; color: var(--marigold); }
+.lightbox.has-info img { max-height: 70vh; margin: 0 auto; }
