@@ -819,3 +819,38 @@ body[data-page="menu"] .site-header { position: relative; }
 .brand, .nav-links a, .nav-toggle { white-space: nowrap; }
 .brand { flex-shrink: 0; }
 @media (min-width: 1081px) { .nav-links { gap: 1.7rem; } }
+
+/* ==== Pedidos a domicilio, redes y reservas ==== */
+.delivery-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 12px; margin-top: 1.6em; }
+.contact-list .delivery-links { justify-content: flex-start; margin-top: 0.5em; }
+.delivery-label { width: 100%; text-align: center; font-size: 0.9rem; color: var(--text-muted-light); }
+.btn-delivery {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; padding: 0 18px;
+  border-radius: 999px; font-weight: 700; font-size: 0.95rem; text-decoration: none;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.btn-delivery:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.btn-delivery.uber { background: #06C167; color: #0B0B0B; }
+.btn-delivery.doordash { background: #D62A08; color: #fff; }
+
+.social-links { display: flex; gap: 10px; }
+.social-links a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1.5px solid var(--line-light); color: var(--text-light);
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.social-links a:hover { background: var(--marigold); border-color: var(--marigold); color: var(--bg-dark); }
+.social-links.on-light a { border-color: var(--line); color: var(--text-dark); }
+.social-links.on-light a:hover { background: var(--bg-dark); border-color: var(--bg-dark); color: var(--marigold); }
+.footer-social-title { margin: 1.2em 0 0.6em; }
+
+.plain-link { color: inherit; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
+.plain-link:hover { color: var(--magenta); }
+.btn-small { min-height: 38px; padding: 0 16px; font-size: 0.9rem; margin-top: 8px; }
+
+.reserva-card { text-align: center; padding: 40px 28px; border: 1.5px solid var(--line); border-radius: var(--radius); background: #fff; }
+.reserva-card h2 { margin-bottom: 0.3em; }
+.reserva-note { margin: 1em 0 0; font-size: 0.9rem; }
+.contact-list .btn-small { display: flex; width: fit-content; }
