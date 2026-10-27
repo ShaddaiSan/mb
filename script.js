@@ -41,3 +41,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Galería: ampliar foto
+document.addEventListener("DOMContentLoaded", function () {
+  var box = document.getElementById("lightbox");
+  if (!box || typeof box.showModal !== "function") return;
+  var img = box.querySelector("img");
+  document.querySelectorAll(".gallery-photo button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      img.src = btn.getAttribute("data-full");
+      img.alt = btn.querySelector("img").alt;
+      box.showModal();
+    });
+  });
+  box.addEventListener("click", function () { box.close(); });
+});
