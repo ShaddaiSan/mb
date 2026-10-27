@@ -7,13 +7,14 @@
 <meta name="description" content="M Taquito: cocina mexicana auténtica, bar y terraza en Longueuil, Quebec. Tacos, burritos, brunch de fin de semana y reservas en línea.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="inicio">
 
 <header class="site-header">
   <nav class="nav">
-    <a href="index.html" class="brand">M Taquito</a>
+    <a href="index.html" class="brand"><img src="images/logo.webp" alt="" width="46" height="46"><span>M Taquito</span></a>
     <button class="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -23,6 +24,7 @@
       <li><a href="galeria.html" data-page="galeria">Galería</a></li>
       <li><a href="reservas.html" data-page="reservas">Reservas</a></li>
       <li><a href="contacto.html" data-page="contacto">Contacto</a></li>
+      <li><a class="nav-order" href="https://www.foodbooking.com/ordering/restaurant/menu?company_uid=4ec5ebd3-07cd-4d14-a162-219042d5eb4e&restaurant_uid=96e847cf-0042-40ef-91f3-e63ae6803445&facebook=true" target="_blank" rel="noopener">Pedir en línea</a></li>
     </ul>
   </nav>
 </header>
@@ -31,29 +33,18 @@
   <div class="container hero-grid">
     <div>
       <p class="hero-eyebrow">Sabores de México, en el corazón de Longueuil</p>
-      <h1>Auténtico, casero y hecho para compartir en mesa.</h1>
+      <h1>Auténtico, casero y <em>hecho para compartir</em>.</h1>
       <p class="lede">Tacos al pastor, salsas de la casa y una terraza siempre animada. Desde nuestra cocina a la tuya, cada platillo lleva recetas de generación en generación.</p>
       <div class="hero-actions">
-        <a href="reservas.html" class="btn btn-primary">Reservar mesa</a>
+        <a href="https://www.foodbooking.com/ordering/restaurant/menu?company_uid=4ec5ebd3-07cd-4d14-a162-219042d5eb4e&restaurant_uid=96e847cf-0042-40ef-91f3-e63ae6803445&facebook=true" target="_blank" rel="noopener" class="btn btn-order">Pedir en línea</a>
+        <a href="reservas.html" class="btn btn-outline">Reservar mesa</a>
         <a href="menu.html" class="btn btn-outline">Ver el menú</a>
       </div>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="tile-a">
-        <svg viewBox="0 0 100 100" fill="none" stroke="#241714" stroke-width="4"><path d="M50 15 C30 15 20 40 25 60 C28 75 40 88 50 88 C60 88 72 75 75 60 C80 40 70 15 50 15 Z"/><path d="M50 15 C45 5 55 5 50 15" fill="#241714" stroke="none"/></svg>
-      </div>
-      <div class="tile-b">
-        <svg viewBox="0 0 100 100" fill="none" stroke="#FBF0E4" stroke-width="4"><circle cx="50" cy="50" r="30"/><path d="M50 20 L50 30 M50 70 L50 80 M20 50 L30 50 M70 50 L80 50"/></svg>
-      </div>
-      <div class="tile-c">
-        <svg viewBox="0 0 100 100" fill="none" stroke="#FBF0E4" stroke-width="4"><path d="M50 90 L50 30 M50 45 L30 25 M50 55 L70 35 M50 65 L25 55 M50 40 L75 60"/></svg>
-      </div>
-      <div class="tile-d">
-        <svg viewBox="0 0 100 100" fill="none" stroke="#241714" stroke-width="4"><path d="M20 70 Q50 20 80 70" /><path d="M20 70 L80 70" /></svg>
-      </div>
-    </div>
+    <div class="hero-logo"><img src="images/logo.webp" alt="Logo de M Taquito: sombrero, chile rojo y bigote" width="420" height="420"></div>
   </div>
 </section>
+<div class="greca" aria-hidden="true"></div>
 
 <div class="info-strip">
   <div>
@@ -96,6 +87,14 @@
   </div>
 </section>
 
+<section class="order-banner">
+  <div class="container">
+    <h2>¿Antojo de tacos? Pide desde casa.</h2>
+    <p>Ordena en línea para recoger o a domicilio. Tu pedido se hace directo en nuestra plataforma segura de pedidos.</p>
+    <a href="https://www.foodbooking.com/ordering/restaurant/menu?company_uid=4ec5ebd3-07cd-4d14-a162-219042d5eb4e&restaurant_uid=96e847cf-0042-40ef-91f3-e63ae6803445&facebook=true" target="_blank" rel="noopener" class="btn btn-order">Pedir en línea</a>
+  </div>
+</section>
+
 <section class="section-dark">
   <div class="container">
     <div class="section-head">
@@ -111,13 +110,14 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="brand">M Taquito</a>
+        <a href="index.html" class="brand"><img src="images/logo.webp" alt="" width="46" height="46"><span>M Taquito</span></a>
         <p>Restaurante y bar mexicano en Longueuil. Cocina de mercado, salsas caseras y una terraza abierta todo el año.</p>
       </div>
       <div>
         <h4>Explora</h4>
         <ul>
           <li><a href="menu.html">Menú</a></li>
+          <li><a href="https://www.foodbooking.com/ordering/restaurant/menu?company_uid=4ec5ebd3-07cd-4d14-a162-219042d5eb4e&restaurant_uid=96e847cf-0042-40ef-91f3-e63ae6803445&facebook=true" target="_blank" rel="noopener">Pedir en línea</a></li>
           <li><a href="galeria.html">Galería</a></li>
           <li><a href="reservas.html">Reservas</a></li>
           <li><a href="contacto.html">Contacto</a></li>

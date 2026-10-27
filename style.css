@@ -1,23 +1,24 @@
 /* ==========================================================================
    M Taquito — hoja de estilos compartida
-   Paleta inspirada en mercado mexicano: comal oscuro, cempasúchil, papel picado
+   Paleta tomada del logo: negro, oro greca, verde neón, rojo chile
    ========================================================================== */
 
 :root {
-  --bg-cream: #FBF3E6;
-  --bg-dark: #241714;
-  --bg-dark-2: #2E1C17;
-  --marigold: #E8A23B;
-  --marigold-dark: #C6821F;
-  --magenta: #C23B6B;
-  --magenta-dark: #A32C56;
-  --cactus: #4F6B4A;
-  --text-dark: #2B1E19;
-  --text-light: #FBF0E4;
-  --text-muted: rgba(43, 30, 25, 0.62);
-  --text-muted-light: rgba(251, 240, 228, 0.68);
-  --line: rgba(43, 30, 25, 0.14);
-  --line-light: rgba(251, 240, 228, 0.18);
+  --bg-cream: #F7F1E3;
+  --bg-dark: #0B0B0B;
+  --bg-dark-2: #161410;
+  --marigold: #D9B45B;
+  --marigold-dark: #A67F22;
+  --magenta: #D3241B;
+  --magenta-dark: #A81A13;
+  --cactus: #1F8A32;
+  --neon: #43E050;
+  --text-dark: #1A1712;
+  --text-light: #F8F1E1;
+  --text-muted: rgba(26, 23, 18, 0.66);
+  --text-muted-light: rgba(248, 241, 225, 0.72);
+  --line: rgba(26, 23, 18, 0.14);
+  --line-light: rgba(217, 180, 91, 0.28);
 
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -119,12 +120,12 @@ p { margin: 0 0 1em; }
   border-color: currentColor;
   color: inherit;
 }
-.btn-outline:hover { background: rgba(251, 240, 228, 0.08); }
+.btn-outline:hover { background: rgba(217, 180, 91, 0.12); }
 
 .btn-outline.on-cream {
   border-color: var(--text-dark);
 }
-.btn-outline.on-cream:hover { background: rgba(43, 30, 25, 0.06); }
+.btn-outline.on-cream:hover { background: rgba(26, 23, 18, 0.06); }
 
 /* ---- Header / Navegación ---- */
 .site-header {
@@ -387,7 +388,7 @@ section { padding: 78px 0; }
 .menu-note {
   margin-top: 2em;
   padding: 20px 24px;
-  background: rgba(232, 162, 59, 0.14);
+  background: rgba(217, 180, 91, 0.18);
   border-left: 4px solid var(--marigold);
   border-radius: 0 var(--radius) var(--radius) 0;
 }
@@ -423,12 +424,12 @@ section { padding: 78px 0; }
   font-size: 1.1rem;
 }
 .gallery-tile.big { grid-column: span 2; grid-row: span 2; }
-.g1 { background: #B5442E; }
+.g1 { background: #A81A13; }
 .g2 { background: var(--cactus); }
 .g3 { background: var(--marigold-dark); }
 .g4 { background: var(--magenta); }
-.g5 { background: #7A4E9C; }
-.g6 { background: #2E5C6E; }
+.g5 { background: #3b3320; }
+.g6 { background: #14301a; }
 
 @media (max-width: 760px) {
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
@@ -469,7 +470,7 @@ textarea { resize: vertical; min-height: 100px; }
   display: none;
   margin-top: 1.6em;
   padding: 18px 22px;
-  background: rgba(79, 107, 74, 0.14);
+  background: rgba(31, 138, 50, 0.12);
   border-left: 4px solid var(--cactus);
   border-radius: 0 var(--radius) var(--radius) 0;
 }
@@ -517,7 +518,7 @@ textarea { resize: vertical; min-height: 100px; }
 }
 @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
 .site-footer h4 { color: var(--text-light); font-size: 1rem; }
-.site-footer .brand { display: inline-block; margin-bottom: 10px; }
+.site-footer .brand { display: inline-flex; margin-bottom: 10px; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
 .site-footer li { margin-bottom: 8px; }
 .site-footer a { text-decoration: none; }
@@ -530,4 +531,56 @@ textarea { resize: vertical; min-height: 100px; }
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+
+/* ==== Identidad del logo ==== */
+.brand { display: inline-flex; align-items: center; gap: 12px; font-style: normal; letter-spacing: 0.02em; }
+.brand img { width: 46px; height: 46px; border-radius: 50%; }
+.brand span { color: var(--neon); text-shadow: 0 0 14px rgba(67, 224, 80, 0.45); }
+
+.nav-links { align-items: center; }
+.nav-links a.nav-order {
+  background: var(--magenta);
+  color: var(--text-light);
+  padding: 9px 18px;
+  border-radius: var(--radius);
+  border-bottom: none;
+  font-weight: 600;
+}
+.nav-links a.nav-order:hover { background: var(--magenta-dark); color: var(--text-light); }
+
+.btn-order { background: var(--magenta); color: var(--text-light); box-shadow: 0 0 0 0 rgba(211,36,27,0.5); }
+.btn-order:hover { background: var(--magenta-dark); }
+
+.hero { background: radial-gradient(ellipse at 75% 40%, #1d1a12 0%, var(--bg-dark) 65%); }
+.hero h1 em { font-style: italic; color: var(--neon); text-shadow: 0 0 22px rgba(67, 224, 80, 0.35); }
+.hero-logo { display: flex; justify-content: center; }
+.hero-logo img { width: min(100%, 420px); filter: drop-shadow(0 12px 40px rgba(217, 180, 91, 0.25)); }
+
+/* Greca decorativa (guiño al aro del logo) */
+.greca {
+  height: 18px;
+  background-color: var(--bg-dark);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='18' viewBox='0 0 36 18' fill='none' stroke='%23D9B45B' stroke-width='2'%3E%3Cpath d='M2 16V2h14v10H8V7h4'/%3E%3Cpath d='M20 16V2h14v10H26V7h4'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+  border-top: 1px solid rgba(217,180,91,0.28);
+  border-bottom: 1px solid rgba(217,180,91,0.28);
+}
+
+.order-banner {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 64px 0;
+}
+.order-banner h2 { color: var(--text-light); }
+.order-banner p { color: var(--text-muted-light); max-width: 52ch; margin: 0 auto 1.6em; }
+
+.menu-order-cta { display: flex; justify-content: center; margin-top: 1.5em; }
+
+@media (max-width: 760px) {
+  .nav-links a.nav-order { display: inline-block; text-align: center; }
+  .brand img { width: 40px; height: 40px; }
 }
