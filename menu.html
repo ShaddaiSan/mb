@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menú — M Taquito</title>
-<meta name="description" content="Antojitos, tacos, especialidades y burritos de M Taquito, restaurante mexicano en Longueuil.">
+<meta name="description" content="Tacos, burritos, nachos, platos fuertes y más del menú de M Taquito, restaurante mexicano en Longueuil.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="images/favicon.png">
@@ -15,6 +15,11 @@
 <header class="site-header">
   <nav class="nav">
     <a href="index.html" class="brand"><img src="images/logo.webp" alt="" width="46" height="46"><span>M Taquito</span></a>
+    <div class="lang-switch" role="group" aria-label="Idioma · Language · Langue" data-i18n-skip>
+      <button type="button" data-lang="es" lang="es" aria-label="Español" aria-pressed="true">ES</button>
+      <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+      <button type="button" data-lang="fr" lang="fr" aria-label="Français" aria-pressed="false">FR</button>
+    </div>
     <button class="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -37,11 +42,51 @@
   </div>
 </section>
 
-<section>
-  <div class="container">
+<div class="menu-body">
+  <nav class="menu-nav" aria-label="Categorías del menú">
+    <ul class="menu-nav-list">
+      <li><a href="#tacos">Tacos</a></li>
+      <li><a href="#burritos">Burritos</a></li>
+      <li><a href="#nachos-y-entradas">Nachos y entradas</a></li>
+      <li><a href="#platos-fuertes">Platos fuertes</a></li>
+      <li><a href="#menu-infantil">Menú infantil</a></li>
+      <li><a href="#bebidas">Bebidas</a></li>
+      <li><a href="#postres">Postres</a></li>
+      <li><a href="#extras">Extras</a></li>
+    </ul>
+  </nav>
 
-    <div class="menu-category">
-      <h2>Entradas</h2>
+  <section class="menu-sections">
+    <div class="container">
+
+    <section class="menu-category" id="tacos" aria-labelledby="tacos-titulo">
+      <h2 id="tacos-titulo">Tacos <span style="font-family:var(--font-body); font-weight:400; font-size:0.9rem; color:var(--text-muted);">— orden de 4, con salsa a elección, cilantro, cebolla y limón</span></h2>
+      <img class="menu-banner" src="images/fotos/tacos-charola-salsas-carnitas.jpg" alt="Charola de tacos con tres salsas" loading="lazy">
+      <div class="menu-item"><span class="name">Al pastor</span><span class="leader"></span><span class="price">$12.99</span></div>
+      <div class="menu-item"><span class="name">Carnitas</span><span class="leader"></span><span class="price">$12.99</span></div>
+      <div class="menu-item"><span class="name">Pollo</span><span class="leader"></span><span class="price">$12.99</span></div>
+      <div class="menu-item"><span class="name">Camarón</span><span class="leader"></span><span class="price">$14.99</span></div>
+      <div class="menu-item"><span class="name">Res con queso fundido</span><span class="leader"></span><span class="price">$13.99</span></div>
+      <div class="menu-item"><span class="name">Vegetariano<span class="tag">vegetariano</span></span><span class="leader"></span><span class="price">$10.99</span></div>
+      <div class="menu-item"><span class="name">Nopal con queso<span class="tag">vegetariano</span></span><span class="leader"></span><span class="price">$11.99</span></div>
+      <div class="menu-item"><span class="name">Mucho Taco<div class="desc">Doble tortilla de 6", queso mozzarella, tu elección de carne</div></span><span class="leader"></span><span class="price">$7.99</span></div>
+    </section>
+
+    <section class="menu-category" id="burritos" aria-labelledby="burritos-titulo">
+      <h2 id="burritos-titulo">Burritos <span style="font-family:var(--font-body); font-weight:400; font-size:0.9rem; color:var(--text-muted);">— Burroland: tortilla de harina de 12", frijoles, arroz y crema, con lechuga, tomate, salsa mil islas, nachos, crema y queso</span></h2>
+      <img class="menu-banner" src="images/fotos/burrito-con-limonada-rosa.jpg" alt="Burrito cortado con nachos y limonada rosa" loading="lazy">
+      <div class="menu-item"><span class="name">Burrito Guacamole<div class="desc">Pollo, cubierto de guacamole</div></span><span class="leader"></span><span class="price">$14.99</span></div>
+      <div class="menu-item"><span class="name">Burrito al pastor</span><span class="leader"></span><span class="price">$13.99</span></div>
+      <div class="menu-item"><span class="name">Burrito a la mexicana<div class="desc">Res molida</div></span><span class="leader"></span><span class="price">$13.99</span></div>
+      <div class="menu-item"><span class="name">Burrito de pollo o res</span><span class="leader"></span><span class="price">$13.99</span></div>
+      <div class="menu-item"><span class="name">Burrito vegetariano<span class="tag">vegetariano</span><div class="desc">Pimiento, cebolla y nopales</div></span><span class="leader"></span><span class="price">$12.99</span></div>
+      <div class="menu-item"><span class="name">Burrito de jamón y tocino</span><span class="leader"></span><span class="price">$13.99</span></div>
+      <div class="menu-item"><span class="name">Burrito en salsa verde<div class="desc">Pollo o res</div></span><span class="leader"></span><span class="price">$13.99 / $14.99</span></div>
+      <div class="menu-item"><span class="name">Burrosaurio<div class="desc">18 pulgadas, 3 carnes, cubierto de salsa roja, verde y queso fundido, con nachos</div></span><span class="leader"></span><span class="price">$21.99</span></div>
+    </section>
+
+    <section class="menu-category" id="nachos-y-entradas" aria-labelledby="nachos-y-entradas-titulo">
+      <h2 id="nachos-y-entradas-titulo">Nachos y entradas</h2>
       <div class="menu-item has-photo">
         <img class="photo" src="images/fotos/nachos-queso-fundido-caja.jpg" alt="Nachos locos con queso fundido, tomate y pimientos" loading="lazy">
         <span class="info">
@@ -73,23 +118,10 @@
           <span class="price">$8.99</span>
         </span>
       </div>
-    </div>
+    </section>
 
-    <div class="menu-category">
-      <h2>Tacos <span style="font-family:var(--font-body); font-weight:400; font-size:0.9rem; color:var(--text-muted);">— orden de 4, con salsa a elección, cilantro, cebolla y limón</span></h2>
-      <img class="menu-banner" src="images/fotos/tacos-charola-salsas-carnitas.jpg" alt="Charola de tacos con tres salsas" loading="lazy">
-      <div class="menu-item"><span class="name">Al pastor</span><span class="leader"></span><span class="price">$12.99</span></div>
-      <div class="menu-item"><span class="name">Carnitas</span><span class="leader"></span><span class="price">$12.99</span></div>
-      <div class="menu-item"><span class="name">Pollo</span><span class="leader"></span><span class="price">$12.99</span></div>
-      <div class="menu-item"><span class="name">Camarón</span><span class="leader"></span><span class="price">$14.99</span></div>
-      <div class="menu-item"><span class="name">Res con queso fundido</span><span class="leader"></span><span class="price">$13.99</span></div>
-      <div class="menu-item"><span class="name">Vegetariano<span class="tag">vegetariano</span></span><span class="leader"></span><span class="price">$10.99</span></div>
-      <div class="menu-item"><span class="name">Nopal con queso<span class="tag">vegetariano</span></span><span class="leader"></span><span class="price">$11.99</span></div>
-      <div class="menu-item"><span class="name">Mucho Taco<div class="desc">Doble tortilla de 6", queso mozzarella, tu elección de carne</div></span><span class="leader"></span><span class="price">$7.99</span></div>
-    </div>
-
-    <div class="menu-category">
-      <h2>Especialidades</h2>
+    <section class="menu-category" id="platos-fuertes" aria-labelledby="platos-fuertes-titulo">
+      <h2 id="platos-fuertes-titulo">Platos fuertes</h2>
       <div class="menu-item"><span class="name">Camarones a la parrilla<div class="desc">Con arroz, ensalada y limón</div></span><span class="leader"></span><span class="price">$21.99</span></div>
       <div class="menu-item"><span class="name">Carne asada<div class="desc">Res a la parrilla con arroz, ensalada, papas y tortillas</div></span><span class="leader"></span><span class="price">$21.99</span></div>
       <div class="menu-item"><span class="name">Enchiladas verdes, rojas o de mole<div class="desc">3 piezas de pollo, con arroz y ensalada</div></span><span class="leader"></span><span class="price">$12.99</span></div>
@@ -119,34 +151,80 @@
       <div class="menu-item"><span class="name">Gringa<div class="desc">Tortilla de 10" con al pastor y queso fundido</div></span><span class="leader"></span><span class="price">$14.99</span></div>
       <div class="menu-item"><span class="name">Alambre<div class="desc">Res o cerdo con cebolla, pimientos, tocino, jamón y queso, 5 tortillas</div></span><span class="leader"></span><span class="price">$21.99</span></div>
       <div class="menu-item"><span class="name">Chilaquiles verdes o rojos con bistec</span><span class="leader"></span><span class="price">$21.99</span></div>
-    </div>
+    </section>
 
-    <div class="menu-category">
-      <h2>Burroland <span style="font-family:var(--font-body); font-weight:400; font-size:0.9rem; color:var(--text-muted);">— tortilla de harina de 12", frijoles, arroz y crema, con lechuga, tomate, salsa mil islas, nachos, crema y queso</span></h2>
-      <img class="menu-banner" src="images/fotos/burrito-con-limonada-rosa.jpg" alt="Burrito cortado con nachos y limonada rosa" loading="lazy">
-      <div class="menu-item"><span class="name">Burrito Guacamole<div class="desc">Pollo, cubierto de guacamole</div></span><span class="leader"></span><span class="price">$14.99</span></div>
-      <div class="menu-item"><span class="name">Burrito al pastor</span><span class="leader"></span><span class="price">$13.99</span></div>
-      <div class="menu-item"><span class="name">Burrito a la mexicana<div class="desc">Res molida</div></span><span class="leader"></span><span class="price">$13.99</span></div>
-      <div class="menu-item"><span class="name">Burrito de pollo o res</span><span class="leader"></span><span class="price">$13.99</span></div>
-      <div class="menu-item"><span class="name">Burrito vegetariano<span class="tag">vegetariano</span><div class="desc">Pimiento, cebolla y nopales</div></span><span class="leader"></span><span class="price">$12.99</span></div>
-      <div class="menu-item"><span class="name">Burrito de jamón y tocino</span><span class="leader"></span><span class="price">$13.99</span></div>
-      <div class="menu-item"><span class="name">Burrito en salsa verde<div class="desc">Pollo o res</div></span><span class="leader"></span><span class="price">$13.99 / $14.99</span></div>
-      <div class="menu-item"><span class="name">Burrosaurio<div class="desc">18 pulgadas, 3 carnes, cubierto de salsa roja, verde y queso fundido, con nachos</div></span><span class="leader"></span><span class="price">$21.99</span></div>
-    </div>
+    <section class="menu-category is-pending" id="menu-infantil" aria-labelledby="menu-infantil-titulo" data-pending>
+      <h2 id="menu-infantil-titulo">Menú infantil</h2>
+      <!-- PENDIENTE: productos, descripciones y precios por proporcionar -->
+      <p class="menu-pending">Estamos preparando esta sección. Mientras tanto, pregunta a tu mesero o <a href="https://www.foodbooking.com/ordering/restaurant/menu?company_uid=4ec5ebd3-07cd-4d14-a162-219042d5eb4e&restaurant_uid=96e847cf-0042-40ef-91f3-e63ae6803445&facebook=true" target="_blank" rel="noopener">consulta el menú en línea</a>.</p>
+    </section>
 
-    <div class="menu-category">
-      <h2>Salsas</h2>
+    <section class="menu-category" id="bebidas" aria-labelledby="bebidas-titulo">
+      <h2 id="bebidas-titulo">Bebidas</h2>
+      <div class="menu-group">
+        <h3 class="menu-group-title">Cócteles</h3>
+        <div class="menu-item"><span class="name">Mojito</span><span class="leader"></span><span class="price price-variants"><span class="variant"><span class="variant-label">Vaso</span> 8.99 $</span><span class="variant"><span class="variant-label">Jarra</span> 29.99 $</span></span></div>
+        <div class="menu-item"><span class="name">Margarita</span><span class="leader"></span><span class="price price-variants"><span class="variant"><span class="variant-label">Vaso</span> 8.99 $</span><span class="variant"><span class="variant-label">Jarra</span> 29.99 $</span></span></div>
+        <div class="menu-item"><span class="name">Tequila Sunrise</span><span class="leader"></span><span class="price price-variants"><span class="variant"><span class="variant-label">Vaso</span> 8.99 $</span><span class="variant"><span class="variant-label">Jarra</span> 29.99 $</span></span></div>
+        <div class="menu-item"><span class="name">Sangría</span><span class="leader"></span><span class="price price-variants"><span class="variant"><span class="variant-label">Vaso</span> 8.99 $</span><span class="variant"><span class="variant-label">Jarra</span> 24.99 $</span></span></div>
+        <div class="menu-item"><span class="name">Piña Colada</span><span class="leader"></span><span class="price price-variants"><span class="variant"><span class="variant-label">Vaso</span> 8.99 $</span><span class="variant"><span class="variant-label">Jarra</span> 24.99 $</span></span></div>
+      </div>
+      <div class="menu-group">
+        <h3 class="menu-group-title">Cervezas y micheladas</h3>
+        <div class="menu-item"><span class="name">Dos XX</span><span class="leader"></span><span class="price price-variants"><span class="variant"><span class="variant-label">Cerveza de barril</span> 6.99 $</span><span class="variant"><span class="variant-label">Jarra</span> 20.99 $</span></span></div>
+        <div class="menu-item"><span class="name">Michelada de 750 ml<div class="desc">Con Miguelito, pimienta, sal y limón verde</div></span><span class="leader"></span><span class="price">8.99 $</span></div>
+      </div>
+      <div class="menu-group">
+        <h3 class="menu-group-title">Aguas frescas</h3>
+        <div class="menu-item"><span class="name">Agua de mango<div class="desc">Preparada con mangos reales y leche</div></span><span class="leader"></span><span class="price">3.25 $</span></div>
+        <div class="menu-item"><span class="name">Horchata<div class="desc">Bebida de arroz con un toque de canela y vainilla</div></span><span class="leader"></span><span class="price">3.25 $</span></div>
+        <div class="menu-item"><span class="name">Agua de tamarindo</span><span class="leader"></span><span class="price">3.25 $</span></div>
+      </div>
+      <div class="menu-group">
+        <h3 class="menu-group-title">Jarritos</h3>
+        <div class="menu-item"><span class="name">Refrescos Jarritos</span><span class="leader"></span><span class="price">3.25 $</span></div>
+        <p class="flavor-label">Sabores disponibles</p>
+        <ul class="flavor-list"><li>Mango</li><li>Fresa</li><li>Piña</li><li>Tamarindo</li><li>Mandarina</li><li>Limón verde</li></ul>
+      </div>
+      <div class="menu-group">
+        <h3 class="menu-group-title">Limonadas</h3>
+        <div class="menu-item"><span class="name">Limonadas</span><span class="leader"></span><span class="price">3.50 $</span></div>
+        <p class="flavor-label">Sabores disponibles</p>
+        <ul class="flavor-list"><li>Durazno</li><li>Sandía</li><li>Maracuyá</li><li>Mango</li></ul>
+      </div>
+      <div class="menu-group">
+        <h3 class="menu-group-title">Refrescos</h3>
+        <div class="menu-item"><span class="name">Refrescos y bebidas embotelladas</span><span class="leader"></span><span class="price">3.00 $</span></div>
+        <p class="flavor-label">Marcas disponibles</p>
+        <ul class="flavor-list"><li>7UP</li><li>Fanta</li><li>Crush</li><li>Coca-Cola</li><li>Coca-Cola de dieta</li><li>Pepsi</li><li>Pepsi de dieta</li><li>Nestea</li></ul>
+      </div>
+    </section>
+
+    <section class="menu-category" id="postres" aria-labelledby="postres-titulo">
+      <h2 id="postres-titulo">Postres</h2>
+      <!-- PENDIENTE: precio por confirmar con el restaurante -->
+      <div class="menu-item" data-price-pending><span class="name">Pastel de queso<div class="desc">Disponible en cuatro sabores</div></span></div>
+      <p class="flavor-label">Sabores disponibles</p>
+        <ul class="flavor-list"><li>Natural</li><li>Caramelo</li><li>Frambuesa</li><li>Chocolate</li></ul>
+      <!-- PENDIENTE: precio por confirmar con el restaurante -->
+      <div class="menu-item" data-price-pending><span class="name">Banana Split<div class="desc">Postre de banana con helado de tres sabores (fresa, chocolate y vainilla), acompañado de chocolate y cerezas</div></span></div>
+      <!-- PENDIENTE: precio por confirmar con el restaurante -->
+      <div class="menu-item" data-price-pending><span class="name">2 churros<div class="desc">Dos churros acompañados de caramelo y chocolate</div></span></div>
+      <!-- PENDIENTE: precio por confirmar con el restaurante -->
+      <div class="menu-item" data-price-pending><span class="name">Flan<div class="desc">Flan tradicional</div></span></div>
+    </section>
+
+    <section class="menu-category" id="extras" aria-labelledby="extras-titulo">
+      <h2 id="extras-titulo">Extras</h2>
+      <h3 class="menu-subtitle">Salsas</h3>
       <div class="menu-item"><span class="name">Salsa roja<span class="tag" style="color:var(--marigold-dark); border-color:var(--marigold-dark);">suave</span></span><span class="leader"></span><span class="price">$3.99</span></div>
       <div class="menu-item"><span class="name">Salsa verde<span class="tag" style="color:var(--marigold-dark); border-color:var(--marigold-dark);">media</span></span><span class="leader"></span><span class="price">$3.99</span></div>
       <div class="menu-item"><span class="name">Salsa de chile de árbol<span class="tag" style="color:var(--magenta); border-color:var(--magenta);">muy picante</span></span><span class="leader"></span><span class="price">$4.99</span></div>
-    </div>
+    </section>
 
-    <div class="menu-note">
-      <strong>Postres y bebidas</strong> — Esta sección aún es contenido de ejemplo: no pudimos confirmar el menú oficial de postres y bebidas del sitio real. Actualízala con la info exacta antes de publicar.
     </div>
-
-  </div>
-</section>
+  </section>
+</div>
 
 <section class="order-banner">
   <div class="container">
@@ -190,6 +268,7 @@
 
 <dialog id="lightbox" class="lightbox"><img alt=""><div class="lightbox-info"><h3 class="lightbox-title"></h3><p class="lightbox-desc"></p><span class="lightbox-price"></span></div><button type="button" class="lightbox-close" aria-label="Cerrar">×</button></dialog>
 
+<script src="i18n.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

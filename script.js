@@ -1,5 +1,13 @@
 // M Taquito — comportamiento compartido del sitio
 
+// Traducción de textos creados por script (i18n.js define window.MT)
+function t(es, vars) {
+  if (window.MT) return window.MT.t(es, vars);
+  var s = es;
+  if (vars) Object.keys(vars).forEach(function (k) { s = s.replace("{" + k + "}", vars[k]); });
+  return s;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Menú móvil
   var toggle = document.querySelector(".nav-toggle");
@@ -28,11 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var confirm = document.getElementById("reserva-confirm");
-      var nombre = document.getElementById("nombre").value.trim() || "amig@";
+      var nombre = document.getElementById("nombre").value.trim() || t("amig@");
       if (confirm) {
-        confirm.textContent =
-          "¡Gracias, " + nombre + "! Tu solicitud de reserva fue registrada. " +
-          "Te confirmaremos por teléfono o correo en las próximas horas.";
+        confirm.textContent = t(
+          "¡Gracias, {name}! Tu solicitud de reserva fue registrada. Te confirmaremos por teléfono o correo en las próximas horas.",
+          { name: nombre }
+        );
         confirm.classList.add("is-visible");
         confirm.setAttribute("tabindex", "-1");
         confirm.focus();
@@ -77,6 +86,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Etiqueta accesible de las fotos ampliables (se recalcula al cambiar de idioma)
+  function labelPhoto(pic) {
+    pic.setAttribute("aria-label", t("Ver más grande") + ": " + pic.alt);
+  }
+  document.addEventListener("mtq-lang", function () {
+    document.querySelectorAll(".menu-item .photo, .menu-banner").forEach(labelPhoto);
+  });
+
   // Menú: foto de un platillo
   document.querySelectorAll(".menu-item .photo").forEach(function (pic) {
     var item = pic.closest(".menu-item");
@@ -91,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     pic.setAttribute("tabindex", "0");
     pic.setAttribute("role", "button");
-    pic.setAttribute("aria-label", "Ver más grande: " + pic.alt);
+    labelPhoto(pic);
     pic.addEventListener("click", go);
     pic.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); }
@@ -110,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     pic.setAttribute("tabindex", "0");
     pic.setAttribute("role", "button");
-    pic.setAttribute("aria-label", "Ver más grande: " + pic.alt);
+    labelPhoto(pic);
     pic.addEventListener("click", go);
     pic.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); }
@@ -121,4 +138,74 @@ document.addEventListener("DOMContentLoaded", function () {
   box.addEventListener("click", function (e) {
     if (e.target === box || e.target.tagName === "IMG") box.close();
   });
+});
+
+// Menú: barra de categorías (sticky) con resaltado automático
+document.addEventListener("DOMContentLoaded", function () {
+  var bar = document.querySelector(".menu-nav");
+  if (!bar) return;
+  var list = bar.querySelector(".menu-nav-list");
+  var links = Array.prototype.slice.call(bar.querySelectorAll("a[href^='#']"));
+  var sections = links.map(function (a) {
+    return document.getElementById(a.getAttribute("href").slice(1));
+  });
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var current = null;
+  var lockUntil = 0;
+  var ticking = false;
+
+  // La altura real de la barra define cuánto margen dejar al llegar a un título
+  function measure() {
+    document.documentElement.style.setProperty("--menubar-h", bar.offsetHeight + "px");
+  }
+
+  // Solo se mueve la barra horizontal, nunca la página
+  function centerInBar(link) {
+    var max = list.scrollWidth - list.clientWidth;
+    if (max <= 0) return;
+    var left = link.offsetLeft - (list.clientWidth - link.offsetWidth) / 2;
+    list.scrollTo({ left: Math.max(0, Math.min(max, left)), behavior: reduce.matches ? "auto" : "smooth" });
+  }
+
+  function setActive(i) {
+    if (i === current) return;
+    current = i;
+    links.forEach(function (a, n) {
+      if (n === i) { a.setAttribute("aria-current", "true"); } else { a.removeAttribute("aria-current"); }
+    });
+    if (i >= 0) centerInBar(links[i]);
+  }
+
+  function update() {
+    ticking = false;
+    if (Date.now() < lockUntil) return;
+    // Línea de lectura bajo la barra: el título al que se llega queda por encima de ella
+    // y el de la sección siguiente (aun siendo corta) queda por debajo
+    var line = bar.offsetHeight + 100;
+    var idx = -1;
+    sections.forEach(function (s, n) {
+      if (s && s.getBoundingClientRect().top <= line) idx = n;
+    });
+    var atEnd = window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 2;
+    if (atEnd) idx = sections.length - 1;
+    setActive(idx);
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }
+
+  // Al pulsar una categoría se resalta de inmediato y no parpadea por las intermedias
+  links.forEach(function (a, n) {
+    a.addEventListener("click", function () {
+      setActive(n);
+      lockUntil = Date.now() + (reduce.matches ? 100 : 1000);
+      window.setTimeout(update, reduce.matches ? 120 : 1050);
+    });
+  });
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", function () { measure(); onScroll(); });
+  measure();
+  update();
 });

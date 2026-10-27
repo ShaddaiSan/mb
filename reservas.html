@@ -15,6 +15,11 @@
 <header class="site-header">
   <nav class="nav">
     <a href="index.html" class="brand"><img src="images/logo.webp" alt="" width="46" height="46"><span>M Taquito</span></a>
+    <div class="lang-switch" role="group" aria-label="Idioma · Language · Langue" data-i18n-skip>
+      <button type="button" data-lang="es" lang="es" aria-label="Español" aria-pressed="true">ES</button>
+      <button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+      <button type="button" data-lang="fr" lang="fr" aria-label="Français" aria-pressed="false">FR</button>
+    </div>
     <button class="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -123,6 +128,7 @@
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
